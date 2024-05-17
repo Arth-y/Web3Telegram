@@ -8,7 +8,7 @@ function App() {
         event.preventDefault();
         try {
             console.log(message);
-            await axios.post(`http://localhost:3000/send-message`, { message });
+            await axios.post(`/api/sendMessage`, { message });
             //await axios.post(`${process.env.BACK}/send-message`, { message });
             setMessage('');
             console.log('Message envoyé avec succès !');
