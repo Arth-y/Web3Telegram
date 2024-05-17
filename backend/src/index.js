@@ -9,7 +9,7 @@ const bot = new TelegramBot(token, {polling: true});
 app.use(express.json());
 
 app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src 'self' http://localhost:5174");
+    res.setHeader('Content-Security-Policy', `default-src 'self'; connect-src 'self' ${process.env.BACK}`);
     next();
 });
 
@@ -32,5 +32,5 @@ app.post('/send-message', (req, res) => {
 const port = 5174;
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on ${process.env.BACK}`);
 });

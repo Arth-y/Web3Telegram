@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
         try {
             console.log(message);
-            await axios.post('http://localhost:5174/send-message', { message });
+            await axios.post(`${process.env.BACK}/send-message`, { message });
             setMessage('');
             console.log('Message envoyé avec succès !');
         } catch (error) {
