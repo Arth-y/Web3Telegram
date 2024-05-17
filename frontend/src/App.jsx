@@ -8,7 +8,7 @@ function App() {
         event.preventDefault();
         try {
             console.log(message);
-            await axios.post(`https://web3-telegram-5bmh.vercel.app/send-message`, { message });
+            await axios.post(`http://localhost:3000/send-message`, { message });
             //await axios.post(`${process.env.BACK}/send-message`, { message });
             setMessage('');
             console.log('Message envoyé avec succès !');
@@ -18,15 +18,23 @@ function App() {
     };
 
     return (
-        <div>
-            <h1>Send Message to Telegram</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="message">Message:</label><br/>
-                <input type="text" id="message" name="message" value={message} onChange={(event) => setMessage(event.target.value)} /><br/>
-                <button type="submit">Send</button>
-            </form>
+        <div className="h-screen">
+            <p className="w-full p-8 border-b text-center">
+                Web3Telegram
+            </p>
+
+            <div className="h-full flex justify-center items-center border-black border-2">
+                <h1>Send Message to Telegram</h1>
+                <form className="border-black border-2" onSubmit={handleSubmit}>
+                    <label htmlFor="message">Message:</label><br/>
+                    <input type="text" id="message"
+                           name="message" value={message} onChange={(event) => setMessage(event.target.value)} /><br/>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
         </div>
-    );
+)
+    ;
 }
 
 export default App;
