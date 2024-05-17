@@ -6,10 +6,10 @@ function App() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         try {
             console.log(message);
-            await axios.post(`${process.env.BACK}/send-message`, { message });
+            await axios.post(`https://web3-telegram-5bmh.vercel.app/send-message`, { message });
+            //await axios.post(`${process.env.BACK}/send-message`, { message });
             setMessage('');
             console.log('Message envoyé avec succès !');
         } catch (error) {

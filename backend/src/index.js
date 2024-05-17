@@ -1,15 +1,17 @@
 const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
 const cors = require('cors'); // Importez le module CORS
+require('dotenv').config()
 
-const token = '7045386731:AAGSmPQQ_t2Po5eDob7rUEWEZ25W-s2t9fg';
 const app = express();
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot("7045386731:AAGSmPQQ_t2Po5eDob7rUEWEZ25W-s2t9fg", {polling: true});
+//const bot = new TelegramBot(process.env.TOKEN, {polling: true});
 
 app.use(express.json());
 
 app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', `default-src 'self'; connect-src 'self' ${process.env.BACK}`);
+    //res.setHeader('Content-Security-Policy', `default-src 'self'; connect-src 'self' ${process.env.BACK}`);
+    res.setHeader('Content-Security-Policy', `default-src 'self'; connect-src 'self' https://web3-telegram-5bmh.vercel.app/`);
     next();
 });
 
@@ -29,8 +31,7 @@ app.post('/send-message', (req, res) => {
         });
 });
 
-const port = 5174;
-
-app.listen(port, () => {
-    console.log(`Server is running on ${process.env.BACK}`);
+app.listen( () => {
+    console.log(`Server is running on https://web3-telegram-5bmh.vercel.app/`);
+    //console.log(`Server is running on ${process.env.BACK}`);
 });
