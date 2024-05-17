@@ -8,7 +8,8 @@ function App() {
         event.preventDefault();
         try {
             console.log(message);
-            await axios.post(`/api/sendMessage`, { message });
+            const res =  await axios.post(`/api/sendMessage`, { message });
+            console.log(res);
             //await axios.post(`${process.env.BACK}/send-message`, { message });
             setMessage('');
             console.log('Message envoyé avec succès !');
