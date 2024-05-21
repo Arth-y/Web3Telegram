@@ -26,11 +26,11 @@ function App() {
                 </p>
                 <div className="flex flexcol">
                     <a href="https://github.com/Arth-y">
-                        <img className="h-16 w-20 pr-4" src="../public/logo/logo_github.png" alt="Logo github"/>
+                        <img className="h-16 w-20 pr-4" src="../public/logo_github.png" alt="Logo github"/>
                     </a>
 
                     <a href="https://t.me/Arty3824">
-                        <img className="h-16 w-16" src="../public/logo/logo_telegram.png" alt="Logo Telegram"/>
+                        <img className="h-16 w-16" src="../public/logo_telegram.png" alt="Logo Telegram"/>
                     </a>
                 </div>
             </div>
