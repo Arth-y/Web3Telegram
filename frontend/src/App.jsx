@@ -46,7 +46,7 @@ function App() {
                         </div>
                         <div>
                             <label className="text-blue-500 text-lg" htmlFor="message">Message:</label><br/>
-                            <textarea className="border-2 border-black h-52 w-96" type="text" id="message"
+                            <textarea className="border-2 border-black h-52 w-96" id="message"
                                    name="message" value={message} onChange={(event) => setMessage(event.target.value)}/><br/>
                         </div>
                         <div className="flex justify-center">
