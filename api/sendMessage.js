@@ -5,7 +5,6 @@ export default function handler(req, res) {
     if (req.method === 'POST') {
         const { message } = req.body;
         const chatId = '6064290146';
-        console.log("bientot sendmsg")
         return bot.sendMessage(chatId, message)
             .then(() => {
                 console.log("Message envoyé avec succès sur Telegram!");

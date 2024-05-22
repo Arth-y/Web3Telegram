@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Modal from './Modal';
 
 function App() {
     const [isNightMode, setIsNightMode] = useState(false);
@@ -11,7 +12,6 @@ function App() {
             console.log(message);
             const res =  await axios.post(`/api/sendMessage`, { message });
             console.log(res);
-            //await axios.post(`${process.env.BACK}/send-message`, { message });
             setMessage('');
             console.log('Message envoyé avec succès !');
         } catch (error) {
@@ -23,6 +23,16 @@ function App() {
     function toggleNightMode() {
         setIsNightMode(!isNightMode);
     }
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
 
     return (
         <div
@@ -85,7 +95,7 @@ function App() {
                             <label
                                 className={`${isNightMode ? 'text-blue-500' : 'text-blue-500'} text-lg`}
                             >
-                                Username:
+                                Chat ID:
                             </label>
                             <br/>
                             <input
@@ -94,6 +104,8 @@ function App() {
                                 placeholder-opacity-70 p-2 text-lg border-2 sm:h-12 sm:w-96 h-12 w-80 rounded-md`}
                             />
                             <br/>
+                            <p className={`pb-4 pt-1 text-blue-500 underline italic text-sm`} onClick={handleOpenModal}> How to get your chat ID ?</p>
+                            <Modal show={showModal} onClose={handleCloseModal} />
                         </div>
                         <div>
                             <label
@@ -118,7 +130,7 @@ function App() {
                             className="flex justify-center"
                         >
                             <button
-                                className={`flex justify-center items-center bg-blue-500 text-white rounded-xl h-12 w-24 p-2 border-[3px] border-blue-700 text-xl`}
+                                className={`flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white rounded-xl h-12 w-24 p-2 border-[3px] border-blue-700 text-xl`}
                                 type="submit"
                             >
                                 Send
