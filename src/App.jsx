@@ -33,9 +33,8 @@ function App() {
         );
         console.log(res);
         setMessage("");
-        console.log("Message envoyé avec succès !");
       } catch (error) {
-        console.error("Erreur lors de l'envoi du message :", error);
+        console.error("Error sending message! ❌", error);
       }
     } else {
       toast.error("Empty field", { position: "top-center", autoClose: 3000 });
