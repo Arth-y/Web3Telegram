@@ -1,6 +1,6 @@
 # Web3Telegram
 
-This project was completed as part of final year internship and represents the first step in creating a secure Telegram messaging site using Web3.
+This project was completed as part of final year internship and represents the first step in creating a secure Telegram messaging website using Web3.
 You can find it here : [The Website](https://web3telegram.vercel.app/)
 
 ## Prerequisites
@@ -39,27 +39,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. T
 
 ## Usage
 
-This site allows you to send a message to a user via a Telegram bot created for this purpose, using the user's "chat_id" to deliver the message.
+This website allows you to send a message to a user via a Telegram bot created for this purpose, using the user's "chat_id" to deliver the message.
 
 ### Chat_id
 
 The chat_id can be found using another Telegram bot, and a mini-tutorial is available on the web page.
 
-*image*
+![tutorial-chat-id](/public/tutorial-chat-id.png)
+
 
 ### Telegram Bot
 
-The Telegram bot that sends the message :
+#### The Telegram bot that sends the message :
 
-*image*
+![bot](/public/web3-bot.png)
 
-Example :
+#### Example :
 
-*image*
+![example-smg](/public/example.png)
 
 ## Learn More
 
-You can learn more about the ** i used :
+You can learn more about the tools I used :
+
 [Vite documentation](https://vitejs.dev/guide/).
 
 [React documentation](https://reactjs.org/).
