@@ -2,6 +2,10 @@ import { useState } from "react";
 import axios from "axios";
 import ModalChatIdExp from "./modal-chat-id-exp.jsx";
 
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const [isNightMode, setIsNightMode] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -10,14 +14,31 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      console.log(message);
-      const res = await axios.post(`/api/sendMessage`, { message, chat_id });
-      console.log(res);
-      setMessage("");
-      console.log("Message envoyé avec succès !");
-    } catch (error) {
-      console.error("Erreur lors de l'envoi du message :", error);
+    if (chat_id.trim() !== "" && message.trim() !== "") {
+      try {
+        const res = await toast.promise(
+          axios.post(`/api/sendMessage`, { message, chat_id }),
+          {
+            pending: {
+              render() {
+                return "Sending message... 📤";
+              },
+              position: "top-center",
+              autoClose: 3000,
+            },
+            success: "Message sent successfully! ✅",
+            error: "Error sending message! ❌",
+            position: "top-center",
+          },
+        );
+        console.log(res);
+        setMessage("");
+        console.log("Message envoyé avec succès !");
+      } catch (error) {
+        console.error("Erreur lors de l'envoi du message :", error);
+      }
+    } else {
+      toast.error("Empty field", { position: "top-center", autoClose: 3000 });
     }
   };
 
@@ -39,6 +60,7 @@ function App() {
       className={`${modeClasse} ${isNightMode ? "bg-gray-700" : "bg-white "}
             h-screen flex flex-col `}
     >
+      <ToastContainer />
       <div
         className={`flex w-full border-b-2 ${isNightMode ? "border-blue-500" : "border-blue-500"} 
                 justify-between items-center`}
