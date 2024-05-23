@@ -99,7 +99,7 @@ function App() {
                             </label>
                             <br/>
                             <input
-                                placeholder="Type here the user you want to message"
+                                placeholder="Type here the chat_id you want to message"
                                 className={`${isNightMode ? 'border-white bg-gray-400 placeholder-gray-800' : 'border-black bg-white placeholder-blue-300'} 
                                 placeholder-opacity-70 p-2 text-lg border-2 sm:h-12 sm:w-96 h-12 w-80 rounded-md`}
                                 id="chat_id"
