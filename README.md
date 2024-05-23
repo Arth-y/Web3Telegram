@@ -70,3 +70,5 @@ You can learn more about the tools I used :
 [Vercel documentation](https://vercel.com/docs)
 
 [node-telegram-bot-api](https://www.npmjs.com/package/node-telegram-bot-api)
+
+[react-toastify](https://fkhadra.github.io/react-toastify/introduction/)
