@@ -47,7 +47,6 @@ The chat_id can be found using another Telegram bot, and a mini-tutorial is avai
 
 ![tutorial-chat-id](/public/tutorial-chat-id.png)
 
-
 ### Telegram Bot
 
 #### The Telegram bot that sends the message :
@@ -71,4 +70,3 @@ You can learn more about the tools I used :
 [Vercel documentation](https://vercel.com/docs)
 
 [node-telegram-bot-api](https://www.npmjs.com/package/node-telegram-bot-api)
-
