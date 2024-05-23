@@ -9,15 +9,15 @@ const ModalChatIdExp = ({ show, onClose, isNightMode }) => {
 
   return (
     <div
-      className={`fixed inset-0 ${isNightMode ? "bg-gray-900 bg-opacity-80" : "bg-gray-600 bg-opacity-50"} overflow-y-auto h-full w-full`}
+      className={`fixed inset-0 ${isNightMode ? "bg-gray-900 bg-opacity-80" : "bg-gray-600 bg-opacity-50"} h-full w-full overflow-y-auto`}
     >
       <div
-        className={`relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-3xl ${modalClass}`}
+        className={`relative top-20 mx-auto w-96 rounded-3xl border p-5 shadow-lg ${modalClass}`}
       >
         <div>
           <h3 className="text-lg text-blue-500">How to get your Chat ID ?</h3>
           <div>
-            <p className="text-sm py-4">
+            <p className="py-4 text-sm">
               To obtain your chat ID, simply send a direct message to the Get My
               ID bot, and the bot will promptly respond with your user ID and
               Current chat ID.
@@ -31,9 +31,9 @@ const ModalChatIdExp = ({ show, onClose, isNightMode }) => {
               <img src="/my-chat-id.png" alt="my-chat-id" /> <br />
             </p>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <button
-              className={`rounded-md border-2 border-blue-700 px-4 py-2 text-sm text-white bg-blue-500 hover:bg-blue-700`}
+              className={`rounded-md border-2 border-blue-700 bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-700`}
               onClick={onClose}
             >
               Close

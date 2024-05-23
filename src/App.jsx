@@ -57,24 +57,24 @@ function App() {
   return (
     <div
       className={`${modeClasse} ${isNightMode ? "bg-gray-700" : "bg-white "}
-            h-screen flex flex-col `}
+            flex h-screen flex-col `}
     >
       <ToastContainer />
       <div
         className={`flex w-full border-b-2 ${isNightMode ? "border-blue-500" : "border-blue-500"} 
-                justify-between items-center`}
+                items-center justify-between`}
       >
         <a
           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           className={`font-bold ${isNightMode ? "text-blue-500" : "text-blue-500"} 
-                    sm:text-4xl text-lg p-8`}
+                    p-8 text-lg sm:text-4xl`}
         >
           Web3Telegram
         </a>
         <div className="flex">
           <button
-            className={`${isNightMode ? "bg-white text-blue-500 bg-blue-" : "bg-gray-700 text-blue-500"} 
-                        rounded-3xl sm:h-16 sm:w-16 h-10 w-10 items-center justify-center flex `}
+            className={`${isNightMode ? "bg-blue- bg-white text-blue-500" : "bg-gray-700 text-blue-500"} 
+                        flex h-10 w-10 items-center justify-center rounded-3xl sm:h-16 sm:w-16 `}
             onClick={toggleNightMode}
           >
             <img
@@ -85,23 +85,23 @@ function App() {
           </button>
           <a href="https://github.com/Arth-y">
             <img
-              className="sm:h-16 sm:w-24 sm:px-4 size-10"
+              className="size-10 sm:h-16 sm:w-24 sm:px-4"
               src="/logo_github.png"
               alt="Logo github"
             />
           </a>
           <a href="https://t.me/Arty3824">
             <img
-              className="sm:h-16 sm:w-20 size-10 sm:pr-4"
+              className="size-10 sm:h-16 sm:w-20 sm:pr-4"
               src="/logo_telegram.png"
               alt="Logo Telegram"
             />
           </a>
         </div>
       </div>
-      <div className="flex flex-1 justify-center items-center">
+      <div className="flex flex-1 items-center justify-center">
         <div
-          className={` ${isNightMode ? "border-white" : "border-black"} border-2 p-4 rounded-2xl`}
+          className={` ${isNightMode ? "border-white" : "border-black"} rounded-2xl border-2 p-4`}
         >
           <h1
             className={`font-semibold ${isNightMode ? "text-blue-500" : "text-blue-500"} pb-4 text-2xl`}
@@ -119,7 +119,7 @@ function App() {
               <input
                 placeholder="Type here the chat_id you want to message"
                 className={`${isNightMode ? "border-white bg-gray-400 placeholder-gray-800" : "border-black bg-white placeholder-blue-300"} 
-                                placeholder-opacity-70 p-2 text-lg border-2 sm:h-12 sm:w-96 h-12 w-80 rounded-md`}
+                                h-12 w-80 rounded-md border-2 p-2 text-lg placeholder-opacity-70 sm:h-12 sm:w-96`}
                 id="chat_id"
                 name="chat_id"
                 value={chat_id}
@@ -127,7 +127,7 @@ function App() {
               />
               <br />
               <p
-                className={`pb-4 pt-1 text-blue-500 underline italic text-sm`}
+                className={`pb-4 pt-1 text-sm italic text-blue-500 underline`}
                 onClick={handleOpenModal}
               >
                 {" "}
@@ -150,7 +150,7 @@ function App() {
               <textarea
                 placeholder="Type your message here"
                 className={` ${isNightMode ? "border-white bg-gray-400 placeholder-gray-800" : "border-black bg-white placeholder-blue-300"}
-                                 p-2 border-2 h-52 sm:w-96 w-80 placeholder-opacity-70 rounded-md`}
+                                 h-52 w-80 rounded-md border-2 p-2 placeholder-opacity-70 sm:w-96`}
                 id="message"
                 name="message"
                 value={message}
@@ -160,7 +160,7 @@ function App() {
             </div>
             <div className="flex justify-center">
               <button
-                className={`flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white rounded-xl h-12 w-24 p-2 border-[3px] border-blue-700 text-xl`}
+                className={`flex h-12 w-24 items-center justify-center rounded-xl border-[3px] border-blue-700 bg-blue-500 p-2 text-xl text-white hover:bg-blue-700`}
                 type="submit"
               >
                 Send
