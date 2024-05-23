@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Modal from './Modal';
+import ModalChatIdExp from './modal-chat-id-exp.jsx';
 
 function App() {
     const [isNightMode, setIsNightMode] = useState(false);
@@ -109,7 +109,7 @@ function App() {
                             />
                             <br/>
                             <p className={`pb-4 pt-1 text-blue-500 underline italic text-sm`} onClick={handleOpenModal}> How to get your chat ID ?</p>
-                            <Modal show={showModal} onClose={handleCloseModal} />
+                            <ModalChatIdExp show={showModal} onClose={handleCloseModal} />
                         </div>
                         <div>
                             <label

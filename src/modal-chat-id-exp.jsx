@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = ({ show, onClose }) => {
+const ModalChatIdExp = ({ show, onClose }) => {
     if (!show) return null;
 
     return (
@@ -23,13 +23,11 @@ const Modal = ({ show, onClose }) => {
                             To obtain your chat ID, simply send a direct message to the Get My ID bot, and the bot will
                             promptly respond with your user ID and Current chat ID.
                             <br/><br/>
-                            <img src="/get-my-id-bot.png" alt="get-my-id-bot"
-                                 width="225" height="150"/> <br/>
+                            <img src="/get-my-id-bot.png" alt="get-my-id-bot"/> <br/>
                             Both values are identical, so it doesn't matters which one you choose to copy and
                             paste.<br/><br/>
 
-                            <img src="/my-chat-id.png" alt="my-chat-id"
-                                 width="200" height="100"/> <br/>
+                            <img src="/my-chat-id.png" alt="my-chat-id"/> <br/>
                         </p>
                     </div>
                     <div className="flex justify-center items-center">
@@ -46,4 +44,4 @@ const Modal = ({ show, onClose }) => {
     );
 };
 
-export default Modal;
+export default ModalChatIdExp;
