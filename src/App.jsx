@@ -26,15 +26,15 @@ function App() {
               position: "top-center",
               autoClose: 3000,
             },
-            success: "Message sent successfully! ✅",
-            error: "Error sending message! ❌",
+            success: "Message sent successfully!",
+            error: "Error sending message!",
             position: "top-center",
           },
         );
         console.log(res);
         setMessage("");
       } catch (error) {
-        console.error("Error sending message! ❌", error);
+        console.error("Error sending message!", error);
       }
     } else {
       toast.error("Empty field", { position: "top-center", autoClose: 3000 });
@@ -92,7 +92,7 @@ function App() {
           </a>
           <a href="https://t.me/Arty3824">
             <img
-              className="size-10 sm:h-16 sm:w-20 sm:pr-4"
+              className="size-10 sm:size-16 sm:mr-4"
               src="/logo_telegram.png"
               alt="Logo Telegram"
             />
@@ -112,6 +112,7 @@ function App() {
             <div>
               <label
                 className={`${isNightMode ? "text-blue-500" : "text-blue-500"} text-lg`}
+                htmlFor="message"
               >
                 Chat ID:
               </label>
@@ -126,13 +127,14 @@ function App() {
                 onChange={(event) => setChat_id(event.target.value)}
               />
               <br />
-              <p
+              <button
                 className={`pb-4 pt-1 text-sm italic text-blue-500 underline`}
                 onClick={handleOpenModal}
+                type="button"
               >
                 {" "}
                 How to get your chat ID ?
-              </p>
+              </button>
               <ModalChatIdExp
                 show={showModal}
                 onClose={handleCloseModal}

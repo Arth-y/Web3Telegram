@@ -7,9 +7,16 @@ const ModalChatIdExp = ({ show, onClose, isNightMode }) => {
     ? "bg-gray-700 text-white"
     : "bg-white text-black";
 
+  const handleClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  }
+
   return (
     <div
       className={`fixed inset-0 ${isNightMode ? "bg-gray-900 bg-opacity-80" : "bg-gray-600 bg-opacity-50"} h-full w-full overflow-y-auto`}
+      onClick={handleClick}
     >
       <div
         className={`relative top-20 mx-auto w-96 rounded-3xl border p-5 shadow-lg ${modalClass}`}
@@ -23,12 +30,12 @@ const ModalChatIdExp = ({ show, onClose, isNightMode }) => {
               Current chat ID.
               <br />
               <br />
-              <img src="/get-my-id-bot.png" alt="get-my-id-bot" /> <br />
+              <img src="/get-my-id-bot.png" alt="get-my-id-bot" className="w-full rounded-xl bg-gray-800 min-h-16"/> <br />
               Both values are identical, so it doesn't matter which one you
               choose to copy and paste.
               <br />
               <br />
-              <img src="/my-chat-id.png" alt="my-chat-id" /> <br />
+              <img src="/my-chat-id.png" alt="my-chat-id" className="w-full rounded-xl bg-gray-800 min-h-16"/> <br />
             </p>
           </div>
           <div className="flex items-center justify-center">
