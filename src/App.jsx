@@ -4,13 +4,15 @@ import Modal from './Modal';
 
 function App() {
     const [isNightMode, setIsNightMode] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [message, setMessage] = useState('');
+    const [chat_id, setChat_id] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             console.log(message);
-            const res =  await axios.post(`/api/sendMessage`, { message });
+            const res =  await axios.post(`/api/sendMessage`, { message, chat_id });
             console.log(res);
             setMessage('');
             console.log('Message envoyé avec succès !');
@@ -23,8 +25,6 @@ function App() {
     function toggleNightMode() {
         setIsNightMode(!isNightMode);
     }
-
-    const [showModal, setShowModal] = useState(false);
 
     const handleOpenModal = () => {
         setShowModal(true);
@@ -102,6 +102,10 @@ function App() {
                                 placeholder="Type here the user you want to message"
                                 className={`${isNightMode ? 'border-white bg-gray-400 placeholder-gray-800' : 'border-black bg-white placeholder-blue-300'} 
                                 placeholder-opacity-70 p-2 text-lg border-2 sm:h-12 sm:w-96 h-12 w-80 rounded-md`}
+                                id="chat_id"
+                                name="chat_id"
+                                value={chat_id}
+                                onChange={(event) => setChat_id(event.target.value)}
                             />
                             <br/>
                             <p className={`pb-4 pt-1 text-blue-500 underline italic text-sm`} onClick={handleOpenModal}> How to get your chat ID ?</p>

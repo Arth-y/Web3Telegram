@@ -3,9 +3,8 @@ const bot = new TelegramBot("7045386731:AAGSmPQQ_t2Po5eDob7rUEWEZ25W-s2t9fg", { 
 
 export default function handler(req, res) {
     if (req.method === 'POST') {
-        const { message } = req.body;
-        const chatId = '6064290146';
-        return bot.sendMessage(chatId, message)
+        const { message, chat_id } = req.body;
+        return bot.sendMessage(chat_id, message)
             .then(() => {
                 console.log("Message envoyé avec succès sur Telegram!");
                 return res.status(200).send('Message envoyé avec succès sur Telegram!');
