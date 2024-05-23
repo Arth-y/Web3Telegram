@@ -36,7 +36,7 @@ function App() {
 
     return (
         <div
-            className={`${modeClasse} ${isNightMode ? 'bg-gray-700' : 'bg-gray-50 '}
+            className={`${modeClasse} ${isNightMode ? 'bg-gray-700' : 'bg-white '}
             h-screen flex flex-col `}
         >
             <div
@@ -109,7 +109,8 @@ function App() {
                             />
                             <br/>
                             <p className={`pb-4 pt-1 text-blue-500 underline italic text-sm`} onClick={handleOpenModal}> How to get your chat ID ?</p>
-                            <ModalChatIdExp show={showModal} onClose={handleCloseModal} />
+                            <ModalChatIdExp show={showModal} onClose={handleCloseModal} isNightMode={isNightMode} />
+
                         </div>
                         <div>
                             <label
